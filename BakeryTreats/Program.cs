@@ -13,8 +13,26 @@ namespace BakeryTreats
         .UseIISIntegration()
         .UseStartup<Startup>()
         .Build();
+        InitializeDatabase(host);
+        host.Run();
+    }
+    private static void InitializeDatabase(IWebHost host)
+    {
+      using (var scope = host.Services.CreateScope())
+      {
+        var services = scope.ServiceProvider;
 
-      host.Run();
+        try
+        {
+          SeedData.InitializeAsync(services).Wait();
+        }
+        catch (Exception ex)
+        {
+          var logger = services
+            .GetRequiredService<ILogger<Program>>();
+          logger.LogError(ex, "Error occurred seeding the DB.");
+        }
+      }
     }
   }
 }
