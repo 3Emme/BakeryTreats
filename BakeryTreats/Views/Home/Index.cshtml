@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+@using BakeryTreats.Models;
+<h1>Candy is dandy.</h1>
+<br>
+<h2>Treat Overview:</h2>
+@if (@Model["treats"].Count == 0)
+{
+  <h3>No Treats have been added yet!</h3>
+}
+@foreach (Treat treat in Model["treats"])
+{
+  <li>@Html.ActionLink($"{treat.TreatName}", "Details", "Treats",new { id = treat.TreatId}) </li>
+}
+<br>
+<p>@Html.ActionLink("See All Treats", "Index", "Treats", null, new {@class="btn btn-primary btn-sm"})</p>
+<p>@Html.ActionLink("Add New Treat", "Create", "Treats", null, new {@class="btn btn-success btn-sm"})</p>
+<br>
+<h2>Flavors</h2>
+@if (@Model["flavors"].Count == 0)
+{
+  <h3>No Flavors have been added yet!</h3>
+}
+@foreach (Flavor flavor in Model["flavors"])
+{
+  <li>@Html.ActionLink($"{flavor.FlavorName}", "Details", "Flavors", new { id = flavor.FlavorId}) </li>
+}
+<br>
+<p>@Html.ActionLink("See All Flavors", "Index", "Flavors", null, new {@class="btn btn-primary btn-sm"})</p>
+<p>@Html.ActionLink("Add New Flavor", "Create", "Flavors", null, new {@class="btn btn-success btn-sm"})</p>
