@@ -6,7 +6,7 @@ img {
 }
 div#header {
   height: 70px;
-  background-color: rgb(167, 110, 26);
+  background-color: rgb(243, 147, 184);
   left: 0px;
   right: 0px;
   width: 100%;
@@ -50,7 +50,7 @@ li#headerLi a {
   font-size: 20px;
 }
 li#headerLi a:hover {
-  background-color: rgb(165, 141, 5)
+  background-color: rgb(165, 91, 175)
 }
 div#footer {
   position:fixed;
@@ -58,7 +58,7 @@ div#footer {
   left:0px;
   width:100%;
   color:rgb(0, 0, 0);
-  background:rgb(172, 172, 172);
+  background:rgb(220, 192, 252);
   padding:3px;
   text-align: center;
 }
@@ -67,5 +67,5 @@ div#footer {
 }
 body{
   color: black;
-  background:rgb(221, 221, 221);
+  background:rgb(223, 251, 253);
 }
