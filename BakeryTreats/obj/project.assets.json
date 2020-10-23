@@ -12495,11 +12495,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Code\\seeSharpProjects\\Factory.Solution\\factory\\Factory.csproj",
-      "projectName": "Factory",
-      "projectPath": "D:\\Code\\seeSharpProjects\\Factory.Solution\\factory\\Factory.csproj",
+      "projectUniqueName": "D:\\Code\\seeSharpProjects\\BakeryTreats.Solution\\bakerytreats\\BakeryTreats.csproj",
+      "projectName": "BakeryTreats",
+      "projectPath": "D:\\Code\\seeSharpProjects\\BakeryTreats.Solution\\bakerytreats\\BakeryTreats.csproj",
       "packagesPath": "C:\\Users\\Temmett\\.nuget\\packages\\",
-      "outputPath": "D:\\Code\\seeSharpProjects\\Factory.Solution\\factory\\obj\\",
+      "outputPath": "D:\\Code\\seeSharpProjects\\BakeryTreats.Solution\\bakerytreats\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
