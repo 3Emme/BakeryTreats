@@ -1,0 +1,31 @@
+@{
+  Layout = "_Layout";
+}
+@model BakeryTreats.Models.Treat;
+<h1>Treat Details </h1>
+<hr />
+<h3>Name: @Html.DisplayFor(model => model.TreatName)</h3>
+<h3>Description: @Html.DisplayFor(model => model.TreatDescription)</h3>
+@if (@Model.Flavors.Count == 0)
+{
+  <p>This Treat is not assigned any Flavors</p>
+}
+else
+{
+  <h3>Flavors assigned to this Treat:</h3>
+  <ul>
+    @foreach (var join in Model.Flavors)
+    {
+      @using (Html.BeginForm("DeleteFlavor", "Treats"))
+      {
+      <li>@Html.ActionLink($"{join.Flavor.FlavorName}", "Details", "Flavors", new { id = join.Flavor.FlavorId })     <input type="submit" value="Remove" class="btn btn-warning btn-sm" /></li>
+      @Html.Hidden("treatId", @join.TreatId)
+      @Html.Hidden("joinId", @join.TreatFlavorId)      
+      }
+    }
+  </ul>  
+}
+<hr />
+<p>@Html.ActionLink("Edit this Treat", "Edit", new { id = Model.TreatId }, new {@class="btn btn-success btn-sm"})</p>
+<p>@Html.ActionLink("Delete this Treat", "Delete", new { id = Model.TreatId }, new {@class="btn btn-danger btn-sm"})</p>
+<p>@Html.ActionLink("Add a Flavor", "AddFlavor", "Treats", new { id = Model.TreatId } , new {@class="btn btn-success btn-sm"})</p>
