@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+@model BakeryTreats.Models.Treat
+<h3>Edit Treat @Html.DisplayFor(model => model.TreatName)</h3>
+<hr />
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.TreatId)
+  @Html.Label("Name:")
+  @Html.EditorFor(model => model.TreatName,new {@required="required"})
+  @Html.Label("Description:")
+  @Html.EditorFor(model => model.TreatDescription,new {@required="required"})
+  <br><br>
+  <input type="submit" value="Save Changes" />
+}
+<hr />
+<p>@Html.ActionLink("Cancel", "Index", null, null, new {@class="btn btn-primary btn-sm"})</p>
