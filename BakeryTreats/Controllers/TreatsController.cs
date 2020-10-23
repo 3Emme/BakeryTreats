@@ -58,7 +58,7 @@ namespace BakeryTreats.Controllers
     {
       if (FlavorId != 0)
       {
-        _db.TreatFlavors.Add(new TreatFlavor() { FlavorId = FlavorId, TreatId = =treat.TreatId });
+        _db.TreatFlavors.Add(new TreatFlavor() { FlavorId = FlavorId, TreatId = treat.TreatId });
       }
       _db.SaveChanges();
       return RedirectToAction("Details", new { id = treat.TreatId });
