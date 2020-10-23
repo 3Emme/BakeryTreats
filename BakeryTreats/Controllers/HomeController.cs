@@ -20,7 +20,7 @@ namespace BakeryTreats.Controllers
       Dictionary<string, object> model = new Dictionary<string, object>();
       List<Treat> treatsModel = _db.Treats.ToList();
       List<Flavor> flavorsModel = _db.Flavors.ToList();
-      model.Add("Treats", treatsModel);
+      model.Add("treats", treatsModel);
       model.Add("flavors", flavorsModel);
       return View(model);
     }
