@@ -20,11 +20,11 @@ A user should be able to navigate to a splash page that lists all treats and fla
 
   * Does at least one of your classes have all CRUD methods implemented in your app? [Complete]
   * Are you able to view both sides of the many-many relationship? For a particular instance of a class, are you able to view all of the instances of the other class that are related to it? [Complete]
-  * Are users able to register, log in and log out with Identity? [Incomplete] 
-  * Is Create, Update and Delete functionality limited to authenticated users? [Incomplete]
-  * Is the project in a polished, portfolio-quality state? [Incomplete]
-  * Was required functionality in place by the 5:00pm Friday deadline? [Incomplete]
-  * Does the project demonstrate all of this week's concepts? If prompted, are you able to discuss your code with an instructor using correct terminology? [Incomplete]
+  * Are users able to register, log in and log out with Identity? [Complete] 
+  * Is Create, Update and Delete functionality limited to authenticated users? [Complete]
+  * Is the project in a polished, portfolio-quality state? [Complete]
+  * Was required functionality in place by the 5:00pm Friday deadline? [Complete]
+  * Does the project demonstrate all of this week's concepts? If prompted, are you able to discuss your code with an instructor using correct terminology? [Complete]
 
 ## Previous Objectives
 
@@ -62,11 +62,11 @@ For reference, here are the previous weeks' objectives:
     * Input:
     * Output:
 
-  7.[] Identity inclusion.
+  7.[X] Identity inclusion.
     * Input:
     * Output:
   
-  8.[] Authentication added to all CUD; leaving only R for un-authed users.
+  8.[X] Authentication added to all CUD; leaving only R for un-authed users.
     * Input:
     * Output:
 
