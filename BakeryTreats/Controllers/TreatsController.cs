@@ -11,11 +11,14 @@ using System.Security.Claims;
 
 namespace BakeryTreats.Controllers
 {
+  [Authorize]
   public class TreatsController : Controller
   {
     private readonly BakeryTreatsContext _db;
-    public TreatsController(BakeryTreatsContext db)
+    private readonly UserManager<ApplicationUser> _userManager;
+    public TreatsController(UserManager<ApplicationUser> userManager, BakeryTreatsContext db)
     {
+      _userManager = userManager;
       _db = db ;
     }
     public ActionResult Index()
@@ -28,8 +31,11 @@ namespace BakeryTreats.Controllers
       return View();
     }
     [HttpPost]
-    public ActionResult Create(Treat treat)
+    public async Task<ActionResult> Create(Treat treat)
     {
+      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      var currentUser = await _userManager.FindByIdAsync(userId);
+      treat.User = currentUser;
       _db.Treats.Add(treat);
       _db.SaveChanges();
       return RedirectToAction("Index");
