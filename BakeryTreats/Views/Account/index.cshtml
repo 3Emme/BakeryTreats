@@ -1,0 +1,39 @@
+@{
+  Layout = "_Layout";
+}
+@using BakeryTreats.Models;
+@model IEnumerable<BakeryTreats.Models.Treat>
+@using System.Security.Claims
+
+<h1>User Account</h1>
+<hr />
+@if (User.Identity.IsAuthenticated)
+{
+  <h1>Hello @User.Identity.Name</h1>
+  <hr />
+  <p>@Html.ActionLink("Edit Details", "Edit")</p>
+  <h3>Your Treats:</h3>
+  @if (@Model.Any())
+  {
+  @foreach (Treat treat in Model)
+  {
+    <li>@Html.ActionLink($"{treat.TreatName}", "Details", "Treats", new { id = treat.TreatId}) </li>
+  }
+  }
+  else
+  {
+  <h3>No treats have been added yet</h3>
+  }
+  <hr />
+  <div>@Html.ActionLink("Add New Treat", "Create", "Treats", null, new {@class="btn btn-success btn-sm"})</div>
+  @using (Html.BeginForm("LogOff", "Account"))
+  {
+    <input type="submit" value="Log out" class="btn btn-danger btn-sm" />
+  }
+}
+else
+{
+  <p>@Html.ActionLink("Register", "Register")</p>
+  <p>@Html.ActionLink("Log in", "Login")</p>
+  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+}
