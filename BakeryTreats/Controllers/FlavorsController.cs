@@ -10,11 +10,14 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 namespace BakeryTreats.Controllers
 {
+  [Authorize]
   public class FlavorsController : Controller
   {
     private readonly BakeryTreatsContext _db;
-    public FlavorsController(BakeryTreatsContext db)
+    private readonly UserManager<ApplicationUser> _userManager;
+    public FlavorsController(UserManager<ApplicationUser> userManager, BakeryTreatsContext db)
     {
+      _userManager = userManager;
       _db = db ;
     }
     public ActionResult Index()
