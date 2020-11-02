@@ -93,7 +93,12 @@ _Please do not hesitate to contact me at emmettbuentiempo@gmail.com should you h
 
 ## Technologies Used
 
-* _C#_
+  * .NET Core
+  * ASP .NET MVC
+  * Entity Framework
+  * Identity
+  * MySQL
+
 
 ### License
 
